@@ -21,12 +21,16 @@ Interviews the user, then writes the answers into the right files. Fully persona
    - What are the 5 to 7 places your most important data actually lives? (Calendar, task tool, CRM, comms, docs, whatever's real for you.)
    - How do you want this assistant to communicate with you: format, tone, things to avoid?
    - Is there anything this assistant should never do without asking first?
+   - Want to name this operating system, and give your assistant a name and personality? We'd encourage it, it's the single biggest thing that makes this feel like yours instead of a generic tool. Totally your call to skip it, but if you're in: what do you want to call this operating system, what should your assistant be called, and what personality should they have?
 3. Write the answers into:
    - `context/about-me.md`
    - `context/priorities.md`
    - `context/writing-samples.md`
    - `.claude/rules/communication-style.md`
-   - The `{{Your Name}}` and knowledge-base placeholders in `CLAUDE.md`
+   - All `{{Your Name}}` placeholders throughout `CLAUDE.md`, plus the `{{Filled by /onboard...}}` block under "Who {{Your Name}} is"
+   - `# {{Ops Name — filled by /onboard. Default: {{Your Name}}'s Operating System}}` (line 1) and `{{Assistant Intro — filled by /onboard. Default: "You are {{Your Name}}'s assistant and thought partner inside this operating system. Your job: help them think clearly, decide faster, and get real work shipped, not just answer questions."}}` (line 3) in `CLAUDE.md`:
+     - If they named things: line 1 becomes `# {{Ops Name}}` (their choice), line 3 becomes `You are {{assistant name}}, {{Your Name}}'s right hand inside {{Ops Name}}. {{personality description in their words}}\n\nYour job: help {{Your Name}} think clearly, decide faster, and get real work shipped, not just answer questions.`
+     - If they skipped it: leave both lines unchanged (the defaults already embedded in the placeholders will remain).
 4. Confirm what was filled in and suggest one thing to try asking right away, based on what they just described.
 
 ## What this does not do
