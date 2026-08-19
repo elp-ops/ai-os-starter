@@ -52,7 +52,7 @@ By the end of this guide, you'll have a working, personalised assistant of your 
 
 ## Before you start: it costs money
 
-Codex needs a ChatGPT Plus, Pro, or Team plan, or API billing set up separately. Sort this out before you start installing anything, so you're not surprised by a paywall halfway through.
+Codex needs a paid ChatGPT plan or API billing set up separately, check OpenAI's current plan page for which tiers include Codex access. Sort this out before you start installing anything, so you're not surprised by a paywall halfway through.
 
 ## Name your assistant
 
@@ -66,7 +66,7 @@ You don't have to decide anything right now, and you can absolutely skip it if i
 
 ### Step 1: Create your account and confirm your plan
 
-Go to [chatgpt.com](https://chatgpt.com) and sign up. Then make sure you actually have an eligible plan active: ChatGPT Plus, Pro, or Team, or API billing set up separately if you'd rather go that route. Codex won't run without one.
+Go to [chatgpt.com](https://chatgpt.com) and sign up. Then make sure you actually have a paid plan active, or API billing set up separately if you'd rather go that route, check OpenAI's current plan page for which tiers include Codex access. Codex won't run without one.
 
 ### Step 2: Install VS Code
 
