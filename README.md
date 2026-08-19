@@ -1,15 +1,17 @@
 # ELP-Ops Starter Kit
 
-A free, MIT-licensed starter kit that turns Claude Code into your personal operating system: one place that holds your context, your rules, your recurring skills, and your memory across sessions.
+A free, MIT-licensed starter kit that turns Claude Code, Codex, or Gemini CLI into your personal operating system: one place that holds your context, your rules, your recurring skills, and your memory across sessions.
 
 Clone it, run `/onboard`, and it personalises itself to you.
 
-**New to git, VS Code, or Claude Code entirely?** Start with [GETTING-STARTED.md](GETTING-STARTED.md) instead, it walks through everything from zero.
+Pick your tool: [Claude Code](GETTING-STARTED.md) · [Codex](GETTING-STARTED-CODEX.md) · [Gemini CLI](GETTING-STARTED-GEMINI.md)
+
+**New to git, VS Code, or coding tools entirely?** Start with [GETTING-STARTED.md](GETTING-STARTED.md) instead, it walks through everything from zero.
 
 ## Quick start
 
 1. Clone this repo to a working folder on your machine.
-2. Open it in Claude Code (via VS Code or the desktop app).
+2. Open it in your tool of choice (Claude Code, Codex, or Gemini CLI, via VS Code, the desktop app, or terminal).
 3. Run `/onboard`. Answer honestly, paste real writing samples rather than describing your voice. Takes about 15 minutes.
 4. Use it for a week. Bring it real questions and real decisions.
 5. Run `/audit` after your first week to see what's actually wired up versus what's just a folder.
@@ -20,7 +22,13 @@ Clone it, run `/onboard`, and it personalises itself to you.
 ```
 ai-os-starter/
 ├── README.md
-├── CLAUDE.md                  ← Your operating manual (filled in by /onboard)
+├── CLAUDE.md                  ← Claude Code's operating manual (filled in by /onboard)
+├── AGENTS.md                  ← Codex edition's operating manual (filled in by /onboard)
+├── GEMINI.md                  ← Gemini CLI edition's operating manual (filled in by /onboard)
+├── GETTING-STARTED.md          ← Zero-to-running walkthrough for Claude Code
+├── GETTING-STARTED-CODEX.md    ← Zero-to-running walkthrough for Codex
+├── GETTING-STARTED-GEMINI.md   ← Zero-to-running walkthrough for Gemini CLI
+├── KNOWN-DIFFERENCES.md        ← Where the three editions behave differently, and why
 ├── LICENSE
 ├── .gitignore
 ├── .claude/
@@ -39,6 +47,10 @@ ai-os-starter/
 │       ├── session-handoff/    ← Clean stopping point before you clear a long conversation
 │       ├── skill-builder/      ← Build and quality-check your own skills once you outgrow the starter set
 │       └── security-audit/     ← Run before any app or website you build goes live, no exceptions
+├── .agents/
+│   └── skills/                 ← Same skill set as .claude/skills/, wired for Codex
+├── .gemini/
+│   └── skills/                 ← Same skill set as .claude/skills/, wired for Gemini CLI
 ├── context/
 │   ├── about-me.md, priorities.md, writing-samples.md   ← Filled by /onboard
 │   └── handoffs/                ← One file per project, read automatically when you resume it
@@ -57,22 +69,22 @@ ai-os-starter/
 
 Four things have to be true for an AI assistant to actually be useful day to day, not just in a demo:
 
-1. **It knows you** — your business, your priorities, your voice (`context/`, `CLAUDE.md`).
+1. **It knows you** — your business, your priorities, your voice (`context/`, `CLAUDE.md` / `AGENTS.md` / `GEMINI.md`).
 2. **It can reach your stuff** — calendar, docs, whatever tools you actually use, wired up incrementally, not all at once.
-3. **It can do things**, not just answer questions, turning a repeatable task into a reusable skill (`.claude/skills/`).
+3. **It can do things**, not just answer questions, turning a repeatable task into a reusable skill (`.claude/skills/`, `.agents/skills/`, or `.gemini/skills/`).
 4. **It remembers**, across sessions, not just within one conversation (`memory/`).
 
 Build in that order. Skipping ahead (wiring up ten tools before the assistant even knows who you are) is why most of these setups stall.
 
 ## Not a theory, tested against months of real use
 
-This isn't a folder structure someone sketched out once. It's the result of several months of building and running an AI operating system day to day: an engineering and finance background, full marketing training, and hands-on AI work, applied directly to real work in Claude Code, not read about secondhand.
+This isn't a folder structure someone sketched out once. It's the result of several months of building and running an AI operating system day to day: an engineering and finance background, full marketing training, and hands-on AI work, applied directly to real work, not read about secondhand.
 
 That kind of real use surfaces real discrepancies: places where the assistant's behaviour drifted, made an assumption it shouldn't have, or handled something the wrong way. Every one of those is a small failure worth catching, not ignoring. The operating practices below, and the memory system in particular, exist specifically to catch that kind of thing once and have it stay fixed, instead of the same mistake happening again next week. See `memory/examples/` for two real (genericised) cases of exactly that.
 
 ## The operating practices
 
-Beyond the folder structure, a handful of behavioural rules are what actually make this feel like an operating system rather than a chatbot with extra files:
+Beyond the folder structure, a handful of behavioural rules are what actually make this feel like an operating system rather than a chatbot with extra files. Paths below are Claude Code's; Codex and Gemini CLI carry the same rules inside `AGENTS.md` and `GEMINI.md` instead of a separate `rules/` folder (see [KNOWN-DIFFERENCES.md](KNOWN-DIFFERENCES.md)).
 
 - **Session handoffs** so you never re-explain context (`/session-handoff`, writes to `context/handoffs/`)
 - **A relentless discovery interview** for stress-testing a plan or extracting what's in your head before you start building (`/grill-me`, writes to `brainstorms/`)
@@ -81,6 +93,10 @@ Beyond the folder structure, a handful of behavioural rules are what actually ma
 - **A real memory system** with distinct types (user, feedback, project, reference) and an always-loaded index, not just a folder of notes (`memory/README.md`)
 - **A verification habit** at the end of multi-step work: what was required, what's missing, what was assumed
 - **A done signal**, so background work doesn't leave you wondering (`.claude/rules/notifications.md`)
+
+## Editions
+
+This starter kit ships as three editions, one per tool, built from the same underlying system. They behave the same in almost every way. Where they don't, it's documented, not left for you to discover: see [KNOWN-DIFFERENCES.md](KNOWN-DIFFERENCES.md).
 
 ## License + attribution
 
