@@ -16,7 +16,7 @@ For the complete technical reference on frontmatter fields, file structure, and 
 
 ## Quick Start: What Is a Skill?
 
-A skill is a reusable set of instructions that tells Codex how to handle a specific task. Skills live in `.agents/skills/[skill-name]/SKILL.md` inside your project. Type `$skill-name` in the chat composer to invoke one directly (it also shows up in the slash command list), or just describe what you need in natural language — Codex loads the skill automatically when your request matches its `description`.
+A skill is a reusable set of instructions that tells Codex how to handle a specific task. Skills live in `.agents/skills/[skill-name]/SKILL.md` inside your project. Codex loads a skill automatically when your request matches its `description`, or you can run `/skills` to browse and pick one by hand.
 
 Think of skills as SOPs for Codex. Instead of re-explaining a workflow every conversation, you write it once and invoke it forever.
 
@@ -46,7 +46,7 @@ Ask questions one round at a time. Each round covers one topic. Move to the next
 *Why this matters: The `description` field is how Codex decides whether to load your skill. Bad trigger words mean Codex never uses it. Too broad means it fires when you don't want it.*
 
 - What would someone say to trigger this? (Get 2-3 natural language phrases)
-- Should it be user-only (invoked manually via `$skill-name`), Codex-auto-invocable, or both?
+- Should it be user-only (invoked manually via `/skills`), Codex-auto-invocable, or both?
 - Does it accept arguments? If so, what? (e.g., a topic, a URL, a file path)
 
 **Round 3: Step-by-Step Process**
@@ -81,7 +81,7 @@ After all rounds, summarize your understanding back to the user in this format:
 ## Skill Summary: [name]
 
 **Goal:** [one sentence]
-**Trigger:** `$name` + [natural language phrases]
+**Trigger:** [natural language phrases], or select via `/skills`
 **Arguments:** [what it accepts, or "none"]
 
 **Process:**
@@ -155,7 +155,7 @@ Test both invocation methods:
 1. **Natural language** -- Say something matching the description. Does Codex load the skill?
    - If not, revise the `description` field to include the keywords you used
    - Try 2-3 different phrasings to verify it triggers reliably
-2. **Direct invocation** -- Invoke it directly (`$skill-name`) with test input
+2. **Direct invocation** -- Run `/skills`, select it, and give it test input
    - Check that outputs go where expected
 3. **Edge cases** -- Try invoking with missing input, unusual input, or empty input
 

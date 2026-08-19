@@ -95,7 +95,7 @@ If Codex doesn't use your skill when expected:
 1. **Check the description** -- Does it include keywords users would naturally say? The description is how Codex decides to load the skill.
 2. **Verify it's visible** -- Ask "What skills are available?" to confirm Codex sees it.
 3. **Rephrase your request** -- Try wording that more closely matches the description.
-4. **Invoke directly** -- Use `$skill-name` to confirm the skill works at all.
+4. **Invoke directly** -- Run `/skills` and select it to confirm the skill works at all.
 
 ### Skill triggers too often
 
