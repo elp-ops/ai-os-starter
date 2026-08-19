@@ -1,6 +1,6 @@
 ---
 name: onboard
-description: One-time setup interview that fills in context/, AGENTS.md, and the Communication Style section of AGENTS.md. Run on day one, or any time the user's situation has changed and the context needs refreshing.
+description: One-time setup interview that fills in context/, CLAUDE.md, and .claude/rules/communication-style.md. Run on day one, or any time the user's situation has changed and the context needs refreshing.
 ---
 
 # Onboard
