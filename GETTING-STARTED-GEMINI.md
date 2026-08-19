@@ -54,7 +54,7 @@ By the end of this guide, you'll have a working, personalised assistant of your 
 
 Gemini CLI has a free tier, but Google has been narrowing who can use it. As of mid-2026, Google shifted individual (non-enterprise) users away from Gemini CLI and toward a newer tool called Antigravity CLI, keeping Gemini CLI access mainly for people on an enterprise Gemini licence. This is recent and could keep changing.
 
-Before you install anything: check on Google's own site which tool and plan currently applies to your account. If you're on an enterprise Gemini licence, Gemini CLI is your tool and this guide applies as written. If you end up needing Antigravity CLI instead, don't worry, it's the direct successor to Gemini CLI (same underlying engine, and it keeps the same skills mechanism, just renamed), so this setup will likely still work with little to no change. Either way, check current access on Google's site before you install, rather than assuming.
+Before you install anything: check on Google's own site which tool and plan currently applies to your account. If you're on an enterprise Gemini licence, Gemini CLI is your tool and this guide applies as written. If you end up needing Antigravity CLI instead, this setup already works there, confirmed: your `GEMINI.md` file is read with zero changes needed. The one thing that doesn't carry over automatically is the skills folder, `.gemini/skills/` needs to become `.agents/skills/` — either do it yourself (`mv .gemini/skills .agents/skills`) or let Antigravity's first-run setup offer to do it for you, it detects an existing Gemini CLI project and asks. Either way, you're not starting over.
 
 ## Name your assistant
 

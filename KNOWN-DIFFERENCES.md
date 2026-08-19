@@ -36,12 +36,14 @@ location.
 ## Cost
 
 - **Claude Code:** needs a paid Claude plan (Pro, Max, or API billing).
-- **Codex:** needs a ChatGPT Plus, Pro, or Team plan, or API billing.
+- **Codex:** needs a paid ChatGPT plan or API billing set up separately,
+  check OpenAI's current plan page for which tiers include Codex access.
 - **Gemini CLI:** has a free tier, but Google has been narrowing who can
   use it. Individual (non-enterprise) users are being shifted toward a
-  newer tool called Antigravity CLI, the direct successor to Gemini CLI
-  (same underlying engine, same skills mechanism, just renamed). If you're
-  on an enterprise Gemini licence, this doesn't affect you. Otherwise,
-  check Google's own site for which tool and plan currently applies to
-  your account before you install, rather than assuming a simple free
-  tier is what you'll get.
+  newer tool called Antigravity CLI, the direct successor to Gemini CLI.
+  If you're on an enterprise Gemini licence, this doesn't affect you.
+  If you end up on Antigravity CLI instead, this kit already works there:
+  `GEMINI.md` is read with zero changes, the only thing that needs moving
+  is the skills folder, `.gemini/skills/` becomes `.agents/skills/`
+  (Antigravity's first-run setup offers to do this for you automatically
+  when it detects an existing Gemini CLI project).
